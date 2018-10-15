@@ -23,7 +23,7 @@ while(True):
     
         for element in usuarios:
             if(busca.upper() in element['DS_USUARIO'].upper()):
-                print("[{0}] - {1}".format(cont,element['DS_USUARIO']))
+                print("[{0}] - {1} - {2}".format(cont,element['DS_USUARIO'],element['SETOR']))
                 result.append(element)
                 cont += 1
         if(len(result) > 0 ):
