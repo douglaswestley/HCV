@@ -1,15 +1,25 @@
-import peewee
+import peewee as p
 
-db = peewee.SqliteDatabase('banco.db')
+db = p.SqliteDatabase('banco.db')
 
-class BaseModel(peewee.Model):
+class BaseModel(p.Model):
     class Meta:
         database = db
 
 class Usuario(BaseModel):
 
     ''' Model for Users '''
-    nm_usuario = peewee.CharField()
-    ds_usuario = peewee.CharField()
-    dt_registro = peewee.DateTimeField()
+    nm_usuario = p.CharField()
+    ds_usuario = p.CharField()
+    dt_registro = p.DateTimeField()
+
+
+class Ocorrencia(BaseModel):
+
+    cd_usuario = p.ForeignKeyField(Usuario, backref='cd_user')
+    reclamacao = p.TextField()
+
+
+
+    
     
