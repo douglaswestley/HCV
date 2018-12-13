@@ -31,5 +31,6 @@ def delete_user(uid):
 
 if __name__ == "__main__":
     #criar_usuario("Walicen", "walicen@gmail.com","123456789")
+    auth.signin
     
     get_list_users()
